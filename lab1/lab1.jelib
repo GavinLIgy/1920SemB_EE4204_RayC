@@ -1,0 +1,13 @@
+# header information:
+Hlab1|9.07
+
+# Views:
+Vschematic|sch
+
+# Technologies:
+Tmocmos|ScaleFORmocmos()D100.0
+
+# Cell inv;1{sch}
+Cinv;1{sch}||schematic|1580819311289|1580819311298|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+X
