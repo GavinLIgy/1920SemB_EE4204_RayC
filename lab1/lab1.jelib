@@ -2,12 +2,64 @@
 Hlab1|9.07
 
 # Views:
+Vicon|ic
 Vschematic|sch
 
 # Technologies:
 Tmocmos|ScaleFORmocmos()D100.0
 
-# Cell inv;1{sch}
-Cinv;1{sch}||schematic|1580819311289|1580819311298|
+# Cell inv;2{ic}
+Cinv;2{ic}||artwork|1580820272247|1580820272247|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
+NOpened-Thicker-Polygon|art@1||0|0|6|10|||SCHEM_function(D5G2;)Sinv|trace()V[-3/-5,-3/5,3/5,3/-5,-3/-5]
+Nschematic:Bus_Pin|pin@0||-5|1||||
+Nschematic:Wire_Pin|pin@1||-3|1||||
+Nschematic:Bus_Pin|pin@2||-5|-1||||
+Nschematic:Wire_Pin|pin@3||-3|-1||||
+Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-5|1
+Aschematic:wire|net@1|||0|pin@3||-3|-1|pin@2||-5|-1
+Ein||D5G2;|pin@0||U
+Eout||D5G2;|pin@2||U
+X
+
+# Cell inv;1{ic}
+Cinv;1{ic}||artwork|1580820243989|1580820243998|E
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOpened-Thicker-Polygon|art@1||0|0|6|10|||SCHEM_function(D5G2;)Sinv|trace()V[-3/-5,-3/5,3/5,3/-5,-3/-5]
+Nschematic:Bus_Pin|pin@0||-5|1||||
+Nschematic:Wire_Pin|pin@1||-3|1||||
+Nschematic:Bus_Pin|pin@2||-5|-1||||
+Nschematic:Wire_Pin|pin@3||-3|-1||||
+Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-5|1
+Aschematic:wire|net@1|||0|pin@3||-3|-1|pin@2||-5|-1
+Ein||D5G2;|pin@0||U
+Eout||D5G2;|pin@2||U
+X
+
+# Cell inv;1{sch}
+Cinv;1{sch}||schematic|1580819311289|1580820306688|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NGlobal-Signal|conn@0||-14|0|||R|
+NGlobal-Signal|conn@1||11|0|||RRR|
+NGround|gnd@0||2|-12||||
+Iinv;2{ic}|inv@1||15|16|||D5G4;
+NTransistor|nmos@0||0|-5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S3
+NWire_Pin|pin@2||-5|-5||||
+NWire_Pin|pin@3||-5|5||||
+NWire_Pin|pin@4||-5|0||||
+NWire_Pin|pin@5||2|0||||
+NTransistor|pmos@1||0|5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S6
+NPower|pwr@0||2|12||||
+Awire|net@5|||0|nmos@0|g|-1|-5|pin@2||-5|-5
+Awire|net@7|||1800|pin@3||-5|5|pmos@1|g|-1|5
+Awire|net@9|||2700|pin@2||-5|-5|pin@4||-5|0
+Awire|net@10|||2700|pin@4||-5|0|pin@3||-5|5
+Awire|net@11|||1800|conn@0||-12.5|0|pin@4||-5|0
+Awire|net@12|||900|pwr@0||2|12|pmos@1|d|2|7
+Awire|net@14|||2700|gnd@0||2|-10|nmos@0|s|2|-7
+Awire|net@15|||900|pmos@1|s|2|3|pin@5||2|0
+Awire|net@16|||900|pin@5||2|0|nmos@0|d|2|-3
+Awire|net@17|||0|conn@1||9.5|0|pin@5||2|0
+Ein||D5G2;|conn@0||U
+Eout||D5G2;|conn@1||U
 X
