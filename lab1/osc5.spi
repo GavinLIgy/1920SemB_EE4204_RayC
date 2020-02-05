@@ -1,9 +1,11 @@
 *** SPICE deck for cell osc5{sch} from library lab1
 *** Created on Tue Feb 04, 2020 20:47:37
 *** Last revised on Tue Feb 04, 2020 20:52:05
-*** Written on Tue Feb 04, 2020 21:08:32 by Electric VLSI Design System, version 9.07
+*** Written on Wed Feb 05, 2020 16:07:34 by Electric VLSI Design System, version 9.07
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\scmos18.txt
 
 *** SUBCIRCUIT lab1__inv FROM CELL inv{sch}
 .SUBCKT lab1__inv in out
@@ -21,4 +23,6 @@ Xinv@1 net@0 net@2 lab1__inv
 Xinv@2 net@2 net@4 lab1__inv
 Xinv@3 net@4 net@6 lab1__inv
 Xinv@4 net@6 ring_out lab1__inv
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\user_append.spi
 .END

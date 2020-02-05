@@ -37,12 +37,11 @@ Eout||D5G2;|pin@2||U
 X
 
 # Cell inv;1{sch}
-Cinv;1{sch}||schematic|1580819311289|1580820306688|
+Cinv;1{sch}||schematic|1580819311289|1580889749958|
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NGlobal-Signal|conn@0||-14|0|||R|
 NGlobal-Signal|conn@1||11|0|||RRR|
 NGround|gnd@0||2|-12||||
-Iinv;2{ic}|inv@1||15|16|||D5G4;
 NTransistor|nmos@0||0|-5|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S3
 NWire_Pin|pin@2||-5|-5||||
 NWire_Pin|pin@3||-5|5||||
