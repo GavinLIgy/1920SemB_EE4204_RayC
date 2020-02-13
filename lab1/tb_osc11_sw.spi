@@ -1,0 +1,54 @@
+*** SPICE deck for cell tb_osc11_sw{sch} from library lab1
+*** Created on Tue Feb 11, 2020 16:59:57
+*** Last revised on Thu Feb 13, 2020 17:47:12
+*** Written on Thu Feb 13, 2020 17:47:23 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\scmos18.txt
+
+*** SUBCIRCUIT lab1__inv FROM CELL inv{sch}
+.SUBCKT lab1__inv in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd N L=0.2U W=0.3U
+Mpmos@1 vdd in out vdd P L=0.2U W=0.6U
+.ENDS lab1__inv
+
+*** SUBCIRCUIT lab1__nand FROM CELL nand{sch}
+.SUBCKT lab1__nand in_1 in_2 out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in_1 net@0 gnd N L=0.2U W=2.2U
+Mnmos@1 net@0 in_2 gnd gnd N L=0.2U W=2.2U
+Mpmos@0 vdd in_1 out vdd P L=0.2U W=2.2U
+Mpmos@1 vdd in_2 out vdd P L=0.2U W=2.2U
+.ENDS lab1__nand
+
+*** SUBCIRCUIT lab1__osc11_sw FROM CELL osc11_sw{sch}
+.SUBCKT lab1__osc11_sw En
+** GLOBAL gnd
+** GLOBAL vdd
+** GLOBAL ring_out_11
+Xinv@1 net@1 net@11 lab1__inv
+Xinv@2 net@11 net@2 lab1__inv
+Xinv@3 net@2 net@3 lab1__inv
+Xinv@4 net@3 net@27 lab1__inv
+Xinv@5 net@26 net@15 lab1__inv
+Xinv@6 net@15 net@17 lab1__inv
+Xinv@7 net@17 net@19 lab1__inv
+Xinv@8 net@19 net@22 lab1__inv
+Xinv@9 net@22 ring_out_11 lab1__inv
+Xinv@10 net@27 net@26 lab1__inv
+Xnand@0 En ring_out_11 net@1 lab1__nand
+.ENDS lab1__osc11_sw
+
+.global gnd vdd ring_out_11
+
+*** TOP LEVEL CELL: tb_osc11_sw{sch}
+Rres@0 net@23 gnd 1k
+VPWL@0 net@23 gnd PWL (5ns 3V, 5ns 0V)
+Xosc11_sw@0 net@23 lab1__osc11_sw
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\user_append.spi
+.END
