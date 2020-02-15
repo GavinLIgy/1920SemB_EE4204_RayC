@@ -1,0 +1,32 @@
+*** SPICE deck for cell osc9{sch} from library lab1
+*** Created on Tue Feb 04, 2020 20:47:37
+*** Last revised on Sat Feb 15, 2020 23:00:34
+*** Written on Sat Feb 15, 2020 23:03:58 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\scmos18.txt
+
+*** SUBCIRCUIT lab1__inv FROM CELL inv{sch}
+.SUBCKT lab1__inv in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd N L=0.2U W=0.3U
+Mpmos@1 vdd in out vdd P L=0.2U W=0.6U
+.ENDS lab1__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: osc9{sch}
+Xinv@0 net@18 net@0 lab1__inv
+Xinv@1 net@0 net@2 lab1__inv
+Xinv@2 net@2 net@4 lab1__inv
+Xinv@3 net@4 net@6 lab1__inv
+Xinv@4 net@6 ring_out lab1__inv
+Xinv@6 ring_out net@19 lab1__inv
+Xinv@7 net@19 net@21 lab1__inv
+Xinv@8 net@21 net@23 lab1__inv
+Xinv@9 net@23 net@18 lab1__inv
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab1\user_append.spi
+.END
