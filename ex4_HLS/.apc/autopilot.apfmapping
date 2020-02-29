@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="ex4.cpp" path="C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\ex4_HLS\src\ex4.cpp"/>
+    <originFiles name="ex4.h" path="C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\ex4_HLS\src\ex4.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>
