@@ -1,0 +1,24 @@
+*** SPICE deck for cell tb_nor3{lay} from library lab2
+*** Created on Wed Mar 04, 2020 15:05:45
+*** Last revised on Wed Mar 04, 2020 15:07:47
+*** Written on Wed Mar 04, 2020 15:08:04 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\scmos18.txt
+
+*** SUBCIRCUIT lab2__mynor3 FROM CELL mynor3{lay}
+.SUBCKT lab2__mynor3 gnd in_1 in_2 in_3 nor_out vdd
+Mnmos@0 nor_out in_1 gnd gnd N L=0.2U W=0.3U AS=0.575P AD=0.678P PS=4.5U PD=5.1U
+Mnmos@7 nor_out in_2 gnd gnd N L=0.2U W=0.3U AS=0.575P AD=0.678P PS=4.5U PD=5.1U
+Mnmos@9 nor_out in_3 gnd gnd N L=0.2U W=0.3U AS=0.575P AD=0.678P PS=4.5U PD=5.1U
+Mpmos@0 net@47 in_1 vdd vdd P L=0.2U W=0.6U AS=0.985P AD=0.285P PS=6.9U PD=2.2U
+Mpmos@1 net@50 in_2 net@47 vdd P L=0.2U W=0.6U AS=0.285P AD=0.285P PS=2.2U PD=2.2U
+Mpmos@2 nor_out in_3 net@50 vdd P L=0.2U W=0.6U AS=0.285P AD=0.678P PS=2.2U PD=5.1U
+.ENDS lab2__mynor3
+
+*** TOP LEVEL CELL: tb_nor3{lay}
+Xmynor3@0 gnd gnd gnd gnd nor_out vdd lab2__mynor3
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\user_append.spi
+.END

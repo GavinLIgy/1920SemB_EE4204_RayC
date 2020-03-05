@@ -1,0 +1,23 @@
+*** SPICE deck for cell tb_nand{lay} from library lab2
+*** Created on Tue Mar 03, 2020 17:13:13
+*** Last revised on Tue Mar 03, 2020 17:20:53
+*** Written on Tue Mar 03, 2020 17:22:57 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\scmos18.txt
+*** WARNING: no power connection for P-transistor wells in cell 'mynand{lay}'
+
+*** SUBCIRCUIT lab2__mynand FROM CELL mynand{lay}
+.SUBCKT lab2__mynand gnd in_1 in_2 nand_out vdd
+Mnmos@0 net@0 in_1 gnd gnd N L=0.2U W=0.3U AS=0.995P AD=0.36P PS=6.7U PD=2.7U
+Mnmos@1 nand_out in_2 net@0 gnd N L=0.2U W=0.3U AS=0.36P AD=0.452P PS=2.7U PD=3.233U
+Mpmos@0 nand_out in_1 vdd vdd P L=0.2U W=0.6U AS=0.985P AD=0.452P PS=6.9U PD=3.233U
+Mpmos@1 vdd in_2 nand_out vdd P L=0.2U W=0.6U AS=0.452P AD=0.985P PS=3.233U PD=6.9U
+.ENDS lab2__mynand
+
+*** TOP LEVEL CELL: tb_nand{lay}
+Xmynand@0 gnd gnd gnd nand_out vdd lab2__mynand
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\user_append.spi
+.END

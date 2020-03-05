@@ -1,0 +1,30 @@
+*** SPICE deck for cell osc11{lay} from library lab2
+*** Created on Mon Mar 02, 2020 22:44:27
+*** Last revised on Tue Mar 03, 2020 15:43:27
+*** Written on Tue Mar 03, 2020 15:43:48 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+* Model cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\scmos18.txt
+
+*** SUBCIRCUIT lab2__Gavininv FROM CELL Gavininv{lay}
+.SUBCKT lab2__Gavininv gnd in out vdd
+Mnmos@0 out in gnd gnd N L=0.2U W=0.3U AS=0.715P AD=0.49P PS=5.1U PD=3.6U
+Mpmos@1 out in vdd vdd P L=0.2U W=0.6U AS=0.985P AD=0.49P PS=6.9U PD=3.6U
+.ENDS lab2__Gavininv
+
+*** TOP LEVEL CELL: osc11{lay}
+XGavininv@0 gnd ring_out net@20 vdd lab2__Gavininv
+XGavininv@1 gnd net@20 net@21 vdd lab2__Gavininv
+XGavininv@2 gnd net@21 net@22 vdd lab2__Gavininv
+XGavininv@3 gnd net@22 net@23 vdd lab2__Gavininv
+XGavininv@4 gnd net@23 net@24 vdd lab2__Gavininv
+XGavininv@5 gnd net@24 net@25 vdd lab2__Gavininv
+XGavininv@6 gnd net@25 net@26 vdd lab2__Gavininv
+XGavininv@7 gnd net@26 net@27 vdd lab2__Gavininv
+XGavininv@8 gnd net@27 net@28 vdd lab2__Gavininv
+XGavininv@9 gnd net@28 net@29 vdd lab2__Gavininv
+XGavininv@10 gnd net@29 ring_out vdd lab2__Gavininv
+* Trailer cards are described in this file:
+.include C:\Users\12217\Documents\GitHub\1920SemB_EE4204_RayC\lab2\user_append.spi
+.END
