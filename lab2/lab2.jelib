@@ -431,7 +431,7 @@ Evdd||D5G2;|pin@1||P
 X
 
 # Cell tb_nand;1{lay}
-Ctb_nand;1{lay}||mocmos|1583226793038|1583227253622||DRC_last_good_drc_area_date()G1583227178431|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1583227178431
+Ctb_nand;1{lay}||mocmos|1583226793038|1584516733345||DRC_last_good_drc_area_date()G1583227178431|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1583227178431
 Ngeneric:Facet-Center|art@0||0|0||||AV
 Imynand;1{lay}|mynand@0||-7|-3|||D5G4;
 NMetal-1-Pin|pin@0||53|27||||
@@ -439,24 +439,22 @@ NMetal-1-Pin|pin@1||54|-25||||
 NMetal-1-Pin|pin@3||54|-1||||
 NMetal-1-Pin|pin@7||-43|-8||||
 NMetal-1-Pin|pin@8||-43|-1||||
-NMetal-1-Pin|pin@9||-43|-27||||
-NMetal-1-Pin|pin@10||44|-27||||
+NMetal-1-Pin|pin@11||-43|27||||
 AMetal-1|net@0|||S0|pin@0||53|27|mynand@0|vdd|43|27
 AMetal-1|net@1|||S0|pin@1||54|-25|mynand@0|gnd|44|-25
 AMetal-1|net@2|||S0|pin@3||54|-1|mynand@0|nand_out|43|-1
 AMetal-1|net@6|||S0|mynand@0|in_2|-37|-8|pin@7||-43|-8
 AMetal-1|net@7|||S0|mynand@0|in_1|-37|-1|pin@8||-43|-1
-AMetal-1|net@10|||S900|pin@7||-43|-8|pin@9||-43|-27
-AMetal-1|net@11|||S1800|pin@9||-43|-27|pin@10||44|-27
-AMetal-1|net@12|||S900|mynand@0|gnd|44|-25|pin@10||44|-27
-AMetal-1|net@13|||S2700|pin@7||-43|-8|pin@8||-43|-1
+AMetal-1|net@13|||S0|mynand@0|vdd|43|27|pin@11||-43|27
+AMetal-1|net@14|||S900|pin@11||-43|27|pin@8||-43|-1
+AMetal-1|net@15|||S900|pin@8||-43|-1|pin@7||-43|-8
 Egnd||D5G2;|pin@1||G
 Enand_out||D5G2;|pin@3||O
 Evdd||D5G2;|pin@0||P
 X
 
 # Cell tb_nor3;1{lay}
-Ctb_nor3;1{lay}||mocmos|1583305545517|1583305820719||DRC_last_good_drc_area_date()G1583305825792|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1583305825792
+Ctb_nor3;1{lay}||mocmos|1583305545517|1584517592523||DRC_last_good_drc_area_date()G1583305825792|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1583305825792
 Ngeneric:Facet-Center|art@0||0|0||||AV
 Imynor3;1{lay}|mynor3@0||-17|5|||D5G4;
 NMetal-1-Pin|pin@0||52|-42||||
@@ -466,7 +464,9 @@ NMetal-1-Pin|pin@3||-51|-42||||
 NMetal-1-Pin|pin@4||-51|9||||
 NMetal-1-Pin|pin@5||-51|2||||
 NMetal-1-Pin|pin@6||-51|-5||||
-NMetal-1-Pin|pin@7||-51|37||||
+NMetal-1-Pin|pin@7||-51|36||||
+NMetal-1-Pin|pin@8||-51|36||||
+NMetal-1-Pin|pin@9||38|36||||
 AMetal-1|net@0|||S0|pin@0||52|-42|mynor3@0|gnd|38|-42
 AMetal-1|net@1|||S1800|mynor3@0|nor_out|38|-12|pin@1||50|-12
 AMetal-1|net@2|||S0|pin@2||49|37|mynor3@0|vdd|38|37
@@ -476,8 +476,10 @@ AMetal-1|net@8|||S1800|pin@5||-51|2|mynor3@0|in_2|-39|2
 AMetal-1|net@9|||S2700|pin@3||-51|-42|pin@6||-51|-5
 AMetal-1|net@10|||S2700|pin@6||-51|-5|pin@5||-51|2
 AMetal-1|net@11|||S1800|pin@6||-51|-5|mynor3@0|in_3|-39|-5
-AMetal-1|net@12|||S0|mynor3@0|vdd|38|37|pin@7||-51|37
-AMetal-1|net@13|||S2700|pin@4||-51|9|pin@7||-51|37
+AMetal-1|net@12|||S2700|pin@4||-51|9|pin@7||-51|36
+AMetal-1|net@13|||S2700|pin@4||-51|9|pin@8||-51|36
+AMetal-1|net@14|||S1800|pin@8||-51|36|pin@9||38|36
+AMetal-1|net@15|||S900|mynor3@0|vdd|38|37|pin@9||38|36
 Egnd||D5G2;|pin@0||G
 Enor_out||D5G2;|pin@1||O
 Evdd||D5G2;|pin@2||P
